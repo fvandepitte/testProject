@@ -9,6 +9,18 @@ namespace MvvmLight1.ViewModel
 {
     public class DashboardWorkspaceViewModel : ViewModelBase
     {
+        private string _label;
 
+        public string Label {
+            get { return _label; }
+            set {
+                if (_label != value)
+                {
+                    _label = value;
+                    RaisePropertyChanged<string>(() => Label);
+                }
+            }
+        }
+        
     }
 }

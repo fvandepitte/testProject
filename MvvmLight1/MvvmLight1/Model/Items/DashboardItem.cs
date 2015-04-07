@@ -8,6 +8,6 @@ namespace MvvmLight1.Model.Items
 {
     public class DashboardItem : IItem
     {
-        public string SomeText { get; set; }
+        public List<string> Workspaces { get; set; }
     }
 }

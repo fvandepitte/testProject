@@ -5,8 +5,31 @@
              xmlns:Vm="clr-namespace:MvvmLight1.ViewModel"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
+             
              d:DataContext="{d:DesignInstance Type=Vm:DashboardViewModel}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        <Label Content="{Binding SomeText}" />
+        <ItemsControl ItemsSource="{Binding Workspaces}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource workspaceRow}">
+                        <Image Style="{StaticResource workspace}" />
+                        <Label Content="{Binding Label}" Style="{StaticResource workspaceLabel}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>

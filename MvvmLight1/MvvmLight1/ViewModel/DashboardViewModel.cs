@@ -15,18 +15,6 @@ namespace MvvmLight1.ViewModel
     {
         private readonly IDataService<DashboardItem> _dataService;
 
-        private string _someText;
-
-        public string SomeText {
-            get { return _someText; }
-            set {
-                if (_someText != value)
-                {
-                    _someText = value;
-                    RaisePropertyChanged<string>(() => SomeText);
-                }
-            }
-        }
 
         private ObservableCollection<DashboardWorkspaceViewModel> _workspaces;
 
@@ -55,8 +43,8 @@ namespace MvvmLight1.ViewModel
                         // Report error here
                         return;
                     }
-
-                    SomeText = item.SomeText;
+                    Workspaces = new ObservableCollection<DashboardWorkspaceViewModel>();
+                    item.Workspaces.ForEach((ws) => Workspaces.Add(new DashboardWorkspaceViewModel() { Label = ws }));
                 });
         }
     }

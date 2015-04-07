@@ -2,15 +2,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="Image">
         <Setter Property="FlowDirection" Value="LeftToRight" />
+        <Setter Property="Stretch" Value="None" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
     </Style>
 
     <Style x:Key="logo" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
         <Setter Property="Source" Value="pack://application:,,,/WPF.Branding;Component/Images/logo.png" />
-        <Setter Property="Stretch" Value="None" />
-        <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Margin" Value="10,5" />
     </Style>
-    
+
+    <Style x:Key="workspace" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="Source" Value="pack://application:,,,/WPF.Branding;Component/Images/vault.png" />
+        <Setter Property="Margin" Value="10,5" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Stretch" Value="Uniform" />
+    </Style>
+
     <Style TargetType="Grid" x:Key="root" >
         <Setter Property="Background" Value="#eff3f8" />
     </Style>
@@ -24,8 +31,21 @@
     </Style>
 
     <Style TargetType="ContentControl" x:Key="content" >
-        <Setter Property="Margin" Value="10,5" />
+        
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="Verdana" />
     </Style>
     
+    <Style x:Key="workspaceLabel" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground"  Value="#4e4e4e" />
+    </Style>
+
+    <Style x:Key="workspaceRow" TargetType="StackPanel" >
+        <Setter Property="Background" Value="#DADADA" />
+    </Style>
 
 </ResourceDictionary>

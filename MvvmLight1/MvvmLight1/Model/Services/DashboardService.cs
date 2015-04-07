@@ -11,7 +11,7 @@ namespace MvvmLight1.Model.Services
     {
         public void GetData(Action<DashboardItem, Exception> callback) {
 
-            callback(new DashboardItem { SomeText = "Test" }, null);
+            callback(new DashboardItem { Workspaces = new List<string> { "Vault 1", "Vault 3", "Vault 2" } }, null);
         }
     }
 }
