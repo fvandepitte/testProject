@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="Image">
+        <Setter Property="FlowDirection" Value="LeftToRight" />
+    </Style>
+
+    <Style x:Key="logo" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="Source" Value="pack://application:,,,/WPF.Branding;Component/Images/logo.png" />
+        <Setter Property="Stretch" Value="None" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Margin" Value="10,5" />
+    </Style>
+    
+    <Style TargetType="Grid" x:Key="root" >
+        <Setter Property="Background" Value="#eff3f8" />
+    </Style>
+
+    <Style TargetType="Grid" x:Key="bar" >
+        <Setter Property="Background" Value="#a0d04e" />
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="logodiv" >
+        <Setter Property="Background" Value="White" />
+    </Style>
+
+    <Style TargetType="ContentControl" x:Key="content" >
+        <Setter Property="Margin" Value="10,5" />
+    </Style>
+    
+
+</ResourceDictionary>

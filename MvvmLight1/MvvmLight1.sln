@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight1", "MvvmLight1\MvvmLight1.csproj", "{65CD7E41-2E18-4B1C-8B60-029C1001858F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Branding", "WPF.Branding\WPF.Branding.csproj", "{77164254-90CE-4CF8-8AA6-7C33FEE10DAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65CD7E41-2E18-4B1C-8B60-029C1001858F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65CD7E41-2E18-4B1C-8B60-029C1001858F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65CD7E41-2E18-4B1C-8B60-029C1001858F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65CD7E41-2E18-4B1C-8B60-029C1001858F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77164254-90CE-4CF8-8AA6-7C33FEE10DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77164254-90CE-4CF8-8AA6-7C33FEE10DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77164254-90CE-4CF8-8AA6-7C33FEE10DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77164254-90CE-4CF8-8AA6-7C33FEE10DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

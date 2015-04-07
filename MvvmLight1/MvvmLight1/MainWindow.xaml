@@ -1,0 +1,42 @@
+﻿<Window xmlns:View="clr-namespace:MvvmLight1.View"  
+        xmlns:Vm="clr-namespace:MvvmLight1.ViewModel"
+        x:Class="MvvmLight1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        mc:Ignorable="d ignore"
+        Height="300"
+        Width="600"
+        Title="MVVM Light Application"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type Vm:DashboardViewModel}">
+                <View:DashboardControl />
+            </DataTemplate>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Style="{StaticResource logodiv}">
+            <Image Style="{StaticResource logo}" />
+        </StackPanel>
+        <Grid Grid.Row="1" Style="{StaticResource bar}">
+        </Grid>
+        <Grid Grid.Row="2" Style="{StaticResource root}">
+            <ContentControl Style="{StaticResource content}" Content="{Binding Current}"/>
+        </Grid>
+    </Grid>
+</Window>
