@@ -78,10 +78,13 @@
     </ApplicationDefinition>
     <Compile Include="Model\IDataService.cs" />
     <Compile Include="Model\Items\DashboardItem.cs" />
+    <Compile Include="Model\Items\DashboardWorkspaceItem.cs" />
     <Compile Include="Model\Items\IItem.cs" />
     <Compile Include="Model\Items\MainItem.cs" />
     <Compile Include="Model\Services\DashboardService.cs" />
+    <Compile Include="Model\Services\DashboardWorkspaceService.cs" />
     <Compile Include="Model\Services\MainService.cs" />
+    <Compile Include="Module\DataServicesModule.cs" />
     <Compile Include="Module\DefaultModule.cs" />
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\DashboardWorkspaceViewModel.cs" />

@@ -34,7 +34,7 @@ namespace MvvmLight1.ViewModel
         }
 
         static ViewModelLocator() {
-            IKernel kernel = new StandardKernel(new DefaultModule());
+            IKernel kernel = new StandardKernel(new DefaultModule(), new DataServicesModule());
             ServiceLocator.SetLocatorProvider(() => new NinjectServiceLocator(kernel));
         }
 

@@ -2,6 +2,7 @@
 using MvvmLight1.Model;
 using MvvmLight1.Model.Items;
 using System.Collections.ObjectModel;
+using Ninject;
 
 namespace MvvmLight1.ViewModel
 {
@@ -44,7 +45,7 @@ namespace MvvmLight1.ViewModel
                         return;
                     }
                     Workspaces = new ObservableCollection<DashboardWorkspaceViewModel>();
-                    item.Workspaces.ForEach((ws) => Workspaces.Add(new DashboardWorkspaceViewModel() { Label = ws }));
+                    item.Workspaces.ForEach((ws) => Workspaces.Add(new DashboardWorkspaceViewModel(ws)));
                 });
         }
     }

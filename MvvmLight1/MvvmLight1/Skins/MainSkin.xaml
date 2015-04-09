@@ -44,12 +44,28 @@
         <Setter Property="Foreground"  Value="#4e4e4e" />
     </Style>
 
-    <Style x:Key="workspaceRow" TargetType="StackPanel" >
+    <Style x:Key="workspaceRow" TargetType="Grid" >
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Margin" Value="0,0.5,0,0" />
+    </Style>
+    
+    <Style x:Key="workspaceLabelRow" TargetType="StackPanel" >
         <Setter Property="Background" Value="#DADADA" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=IsMouseOver}" Value="true">
                 <Setter Property="Background" Value="#EFEFEF" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="workspaceActions" TargetType="StackPanel" >
+        <Setter Property="Background" Value="#EFEFEF" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=IsOpen}" Value="true">
+                <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=IsOpen}" Value="false">
+                <Setter Property="Visibility" Value="Collapsed" />
             </DataTrigger>
         </Style.Triggers>
     </Style>

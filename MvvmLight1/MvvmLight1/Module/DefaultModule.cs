@@ -15,9 +15,9 @@ namespace MvvmLight1.Module
     public class DefaultModule : NinjectModule
     {
         public override void Load() {
-            Bind<IDataService<MainItem>>().To<MainService>().WhenInjectedInto<MainViewModel>();
-            Bind<IDataService<DashboardItem>>().To<DashboardService>().WhenInjectedInto<DashboardViewModel>();
+
             Bind<MainViewModel>().ToSelf().InSingletonScope();
+            Bind<DashboardViewModel>().ToSelf().InSingletonScope();
 
         }
     }

@@ -26,19 +26,34 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel DataContext="{Binding}" Orientation="Horizontal" Style="{StaticResource workspaceRow}">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseEnter">
-                                <mvvm:EventToCommand Command="{Binding OnEnter}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseLeave">
-                                <mvvm:EventToCommand Command="{Binding OnLeave}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
+                    <Grid DataContext="{Binding}" Style="{StaticResource workspaceRow}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0"  Orientation="Horizontal" Style="{StaticResource workspaceLabelRow}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseEnter">
+                                    <mvvm:EventToCommand Command="{Binding OnEnter}"/>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseLeave">
+                                    <mvvm:EventToCommand Command="{Binding OnLeave}"/>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <mvvm:EventToCommand Command="{Binding OnClicked}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
 
-                        <Image Style="{StaticResource workspace}" />
-                        <Label Content="{Binding Label}" Style="{StaticResource workspaceLabel}"/>
-                    </StackPanel>
+                            <Image Style="{StaticResource workspace}" />
+                            <Label Content="{Binding Label}" Style="{StaticResource workspaceLabel}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Vertical" Style="{StaticResource workspaceActions}">
+                            <Label>Tralalala</Label>
+                            <Label>Tralalala</Label>
+                            <Label>Tralalala</Label>
+                        </StackPanel>
+                    </Grid>
+                    
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
