@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:Vm="clr-namespace:MvvmLight1.ViewModel"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
              mc:Ignorable="d" 
              
              d:DataContext="{d:DesignInstance Type=Vm:DashboardViewModel}">
@@ -24,7 +26,16 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Style="{StaticResource workspaceRow}">
+                    <StackPanel DataContext="{Binding}" Orientation="Horizontal" Style="{StaticResource workspaceRow}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseEnter">
+                                <mvvm:EventToCommand Command="{Binding OnEnter}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeave">
+                                <mvvm:EventToCommand Command="{Binding OnLeave}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+
                         <Image Style="{StaticResource workspace}" />
                         <Label Content="{Binding Label}" Style="{StaticResource workspaceLabel}"/>
                     </StackPanel>

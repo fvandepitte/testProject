@@ -45,7 +45,12 @@
     </Style>
 
     <Style x:Key="workspaceRow" TargetType="StackPanel" >
+        <Setter Property="Margin" Value="0,0.5,0,0" />
         <Setter Property="Background" Value="#DADADA" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=IsMouseOver}" Value="true">
+                <Setter Property="Background" Value="#EFEFEF" />
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
-
 </ResourceDictionary>
